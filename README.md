@@ -32,3 +32,15 @@ A compiled Jar file has been included in the repository. Make sure you have Java
         mvn package
         mvn install
         java -jar target/passgen-*.jar
+
+
+## License
+
+`PassGen` is released under the [GNU General Public License, Version 2](LICENSE)
+    
+        Copyright (C) 2022 Weverson Lemos
+
+        This program is free software; you can redistribute it and/or
+        modify it under the terms of the GNU General Public License
+        as published by the Free Software Foundation; either version 2
+        of the License, or (at your option) any later version
