@@ -6,8 +6,8 @@ Project created to practice the programming language using Spring Boot and its t
 
 ## Requirements
 
-1. [ Java ]( https://www.java.com/ )
-2. [ Docker ]( https://docs.docker.com/engine/install/ ) and [ Docker-Compose ]( https://docs.docker.com/compose/ )
+1. [Java](https://www.java.com/)
+2. [Docker](https://docs.docker.com/engine/install/) and [Docker-Compose](https://docs.docker.com/compose/)
 
 ## Get Started
 
@@ -48,7 +48,7 @@ Or, stop the container by name. [Be careful not to interrupt another container w
 
 ## License
 
-`PassGen` is released under the [ GNU General Public License, Version 2 ]( LICENSE )
+`PassGen` is released under the [GNU General Public License, Version 2](LICENSE)
 
         Copyright (C) 2022 Weverson Lemos
 
