@@ -33,7 +33,6 @@ A compiled Jar file has been included in the repository. Make sure you have Java
         mvn install
         java -jar target/passgen-*.jar
 
-        
 ## Other information
 
 To finish the docker container, enter the project folder and run the following command

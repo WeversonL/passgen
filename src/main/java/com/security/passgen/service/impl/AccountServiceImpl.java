@@ -11,9 +11,9 @@ import javax.validation.ConstraintViolation;
 import javax.validation.ConstraintViolationException;
 import java.util.List;
 
-import static com.security.passgen.utils.Statics.DASHED;
+import static com.security.passgen.utils.Statics.*;
 import static com.security.passgen.utils.Utilities.clearScreen;
-import static java.util.Objects.isNull;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 @Service
 @RequiredArgsConstructor
@@ -27,7 +27,7 @@ public class AccountServiceImpl implements AccountService {
     public void getAccounts() {
         try {
             List<AccountDTO> accounts = getSavedAccountService.getAccounts();
-            validateResponse(accounts);
+            showAccounts(accounts);
         } catch (CredentialsException e) {
             System.out.println(e.getMessage());
         }
@@ -37,7 +37,7 @@ public class AccountServiceImpl implements AccountService {
     public void getAccountByService(String serviceName) {
         try {
             List<AccountDTO> accounts = getSavedAccountService.getAccountByServiceName(serviceName);
-            validateResponse(accounts);
+            showAccounts(accounts);
         } catch (CredentialsException e) {
             System.out.println(e.getMessage());
         }
@@ -61,25 +61,23 @@ public class AccountServiceImpl implements AccountService {
     @Override
     public String generatePassword(String length) {
         clearScreen();
-        if (isNull(length)) {
-            System.out.println("The \"length\" value must be sent");
-            throw new IllegalArgumentException();
+        if (isBlank(length)) {
+            System.out.println(LENGTH_REQUIRED);
+            throw new CredentialsException(LENGTH_REQUIRED);
         } else if (!length.matches("\\d+")) {
-            System.out.println("The \"length\" value must contain only positive numeric values");
-            throw new IllegalArgumentException();
+            System.out.println(LENGTH_EXCEPTION);
+            throw new CredentialsException(LENGTH_EXCEPTION);
         }
         return generatePassword.generatePassword(Integer.parseInt(length));
     }
 
-    private void validateResponse(List<AccountDTO> accounts) {
+    private void showAccounts(List<AccountDTO> accounts) {
         clearScreen();
         if (accounts.isEmpty()) {
             System.out.println("You don't have saved accounts");
             return;
         }
-        for (AccountDTO account : accounts) {
-            System.out.println(account);
-        }
+        accounts.forEach(System.out::println);
     }
 
 }

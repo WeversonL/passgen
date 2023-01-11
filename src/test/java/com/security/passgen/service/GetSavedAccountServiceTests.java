@@ -28,7 +28,6 @@ public class GetSavedAccountServiceTests {
     @InjectMocks
     private GetSavedAccountServiceImpl getSavedAccountService;
 
-
     @Before
     public void setup() {
         List<AccountDAO> accountList = new ArrayList<>();

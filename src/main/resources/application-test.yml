@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    name: passgen
+    url: jdbc:mysql://localhost:3306/passgen
+    username: passgen
+    password: passgen
+
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 5
+      idle-timeout: 14000
+      max-lifetime: 18000
+      minimum-idle: 1
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+logging:
+  level:
+    root: OFF
+
+#  pattern:
+#    console:

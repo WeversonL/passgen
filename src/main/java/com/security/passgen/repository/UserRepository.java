@@ -1,6 +1,5 @@
 package com.security.passgen.repository;
 
-
 import com.security.passgen.model.dao.AccountDAO;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

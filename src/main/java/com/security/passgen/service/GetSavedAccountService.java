@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface GetSavedAccountService {
     List<AccountDTO> getAccountByServiceName(String serviceName);
+
     List<AccountDTO> getAccounts();
 }
